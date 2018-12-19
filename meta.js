@@ -49,11 +49,14 @@ module.exports = {
       "type": "confirm",
       "message": "Install vuex?"
     },
+    "axios":{
+      "type": "confirm",
+      "message": "Install axios?"
+    },
     "isMobile":{
         "type": "confirm",
         "message": "is Mobile project?"
     },
-
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -97,6 +100,7 @@ module.exports = {
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/store/**/*": "vuex",
+    "src/api/axios/**/*": "axios",
     "src/router/**/*": "router",
     "src/css/min.scss": "isMobile",
     "static/js/lib-flexible.js": "isMobile",

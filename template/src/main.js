@@ -10,11 +10,31 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 {{#vuex}}
 import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import store from  './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import store from  './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 
+{{#axios}}
+//axios封装
+import api from './api/axios/' {{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.prototype.$api = api
+{{/axios}}
 
+import * as socketApi from './api/socket/config/socket'     //websocket封装
+import indexDB from './utils/indexDB/index'                 //indexDB封装
+import commonMethod from './utils/method/index';            //公用method
+import commonFilter from './utils/filter/index';            //公用filter
+import 'mint-ui/lib/style.css'
+import { Toast, Indicator, Button } from 'mint-ui';
+
+Vue.prototype.Toast = Toast;
+Vue.prototype.Indicator = Indicator;
+Vue.component(Button.name, Button);
+Vue.prototype.socketApi = socketApi                         //WebSocket封装方法
+
+Vue.use(indexDB)
+Vue.use(commonMethod)
+Vue.use(commonFilter)
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 

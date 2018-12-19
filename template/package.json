@@ -14,14 +14,17 @@
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit/specs{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}"{{/lint}}
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "mint-ui": "^2.2.13",
     "vue": "^2.5.2"{{#router}},
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
-    "vuex": "^2.1.1"{{/vuex}}
+    "vuex": "^3.0.1"{{/vuex}}
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
+    {{#axios}}
+    "axios": "^0.16.1",
+    {{/axios}}
     {{#lint}}
     "babel-eslint": "^7.1.1",
     {{/lint}}
